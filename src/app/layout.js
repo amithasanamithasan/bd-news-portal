@@ -1,6 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/ui/shared/Navbar";
+import Navbar from "@/components/shared/Navbar";
+import Footer from "@/components/shared/Footer";
+import { Container } from "@mui/material";
+import ThemeProvider from "@/context/TheamProvider";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,9 +17,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar></Navbar>
-        {children}
-        </body>
+        <ThemeProvider>
+          <div>
+            <Navbar></Navbar>
+            <Container className="min-h-screen">
+              {children}
+            </Container>
+            <Footer></Footer>
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
