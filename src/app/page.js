@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 
 const HomePage = () => {
   return (
-    <div>
+    <>
      <Grid container spacing={2}>
   <Grid item xs={8}>
 <LatestNews></LatestNews>
@@ -15,7 +15,7 @@ const HomePage = () => {
   </Grid>
  
 </Grid>
-    </div>
+    </>
   );
 };
 
